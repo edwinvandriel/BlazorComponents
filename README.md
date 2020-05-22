@@ -10,7 +10,7 @@ To install the library don't forget to do the following steps:
 
 - Add to your _Host.html file.
 ```html 
-<link rel="stylesheet" href="_content/Evd.Blazor.Components/styles/calendar.css" />
+<link rel="stylesheet" href="_content/Evd.Blazor.Components.Calendar/styles.css" />
 ``` 
 
 - Add to your _Imports.razor file.

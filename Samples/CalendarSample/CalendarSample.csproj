@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Evd.Blazor.Components\Evd.Blazor.Components.csproj" />
+    <ProjectReference Include="..\..\Evd.Blazor.Components.Calendar\Evd.Blazor.Components.Calendar.csproj" />
   </ItemGroup>
 
 </Project>

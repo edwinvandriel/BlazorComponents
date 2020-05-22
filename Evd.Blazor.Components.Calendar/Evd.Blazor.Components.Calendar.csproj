@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1</Version>
+    <Company>Edwin van Driel</Company>
+    <Authors>Edwin van Driel</Authors>
+    <Description>A component library for use with Microsoft Blazor</Description>
+    <RepositoryUrl>https://github.com/edwinvandriel/BlazorComponents</RepositoryUrl>
+    <PackageTags>blazor calendar</PackageTags>
+    <PackageProjectUrl>https://github.com/edwinvandriel/BlazorComponents</PackageProjectUrl>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>
