@@ -1,4 +1,4 @@
-﻿namespace Evd.Blazor.Components.Calendar.Models
+﻿namespace Evd.Blazor.Components.Calendar
 {
     public enum DayStatus
     {

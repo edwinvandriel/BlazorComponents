@@ -1,5 +1,4 @@
-﻿using Evd.Blazor.Components.Calendar.Models;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -33,7 +32,7 @@ namespace Evd.Blazor.Components.Calendar
 
         private DateTime? startDate { get; set; }
         private DateTime? endDate { get; set; }
-        private IEnumerable<YearModel> calendarData;
+        private IEnumerable<CalendarYear> calendarData;
         private CultureInfo currentCulture;
         private DateTime currentDate;
 
@@ -58,7 +57,7 @@ namespace Evd.Blazor.Components.Calendar
             }
         }
 
-        private IEnumerable<YearModel> GetCalendarData()
+        private IEnumerable<CalendarYear> GetCalendarData()
         {
             var calendar = Enumerable
                 .Range(0, (int)currentDate.AddYears(1).Subtract(currentDate).TotalDays)
@@ -67,14 +66,14 @@ namespace Evd.Blazor.Components.Calendar
                 .GroupBy(d => new { d.Date.Year, d.Date.Month, d.WeekNr })
                 .GroupBy(d => new { d.Key.Year, d.Key.Month })
                 .Take(MaximumMonthsToDisplay)
-                .Select(y => new YearModel
+                .Select(y => new CalendarYear
                 {
                     Month = y.Key.Month,
                     Year = y.Key.Year,
-                    Weeks = y.Select(w => new WeekModel
+                    Weeks = y.Select(w => new CalendarWeek
                     {
                         Weeknumber = w.Key.WeekNr,
-                        Days = w.Select(d => new DayModel
+                        Days = w.Select(d => new CalendarDay
                         {
                             Date = d.Date,
                             DayOfWeek = d.Weekday,
@@ -86,7 +85,7 @@ namespace Evd.Blazor.Components.Calendar
             return calendar;
         }
 
-        private string GetCssDecorationClass(DayModel dayModel)
+        private string GetCssDecorationClass(CalendarDay dayModel)
         {
             switch (dayModel)
             {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Evd.Blazor.Components.Calendar.Models
+namespace Evd.Blazor.Components.Calendar
 {
-    public class DayModel
+    public class CalendarDay
     {
         public DateTime Date { get; set; }
         public DayOfWeek DayOfWeek { get; set; }

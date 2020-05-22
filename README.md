@@ -16,7 +16,6 @@ To install the library don't forget to do the following steps:
 - Add to your _Imports.razor file.
 ```csharp 
 @using Evd.Blazor.Components.Calendar
-@using Evd.Blazor.Components.Calendar.Models 
 ```
 
 After these settings you can use the calendar like in our sample 'CalendarSample'.
