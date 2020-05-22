@@ -1,0 +1,142 @@
+﻿.calendar {
+    max-width: 380px;
+}
+
+    .calendar .calendar-container {
+        width: 340px;
+        height: 340px;
+        border: 1px solid silver;
+        border-radius: 4px;
+    }
+
+    .calendar .calendar-cell {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid white;
+    }
+
+    .calendar .calendar-selected-cell {
+        background-color: #225fa9;
+        color: white;
+    }
+
+    .calendar .calendar-free-cell {
+        background-color: #ccf1cc;
+    }
+
+    .calendar .calendar-occupied-cell {
+        background-color: red;
+        color: white;
+    }
+
+    .calendar .calendar-enabled-cell {
+        display: grid;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+        .calendar .calendar-enabled-cell:hover {
+            background-color: #225fa9;
+            color: white;
+        }
+
+    .calendar .calendar-disabled-cell {
+        color: silver;
+        display: grid;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        cursor: not-allowed;
+    }
+
+    .calendar .calendar-selected-start-cell {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .calendar .calendar-selected-end-cell {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .calendar .calendar-header-cell {
+        text-align: center;
+        color: silver;
+    }
+
+    .calendar .calendar-week-cell {
+        color: silver;
+    }
+
+span.tooltip-top {
+    position: relative;
+    display: inline;
+}
+
+    span.tooltip-top span {
+        position: absolute;
+        width: 40px;
+        color: #FFFFFF;
+        background: #000000;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        visibility: visible;
+        opacity: 0.8;
+        bottom: 38px;
+        left: 50%;
+        margin-left: -20px;
+        z-index: 999;
+        border-radius: 6px;
+    }
+
+        span.tooltip-top span:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -8px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid #000000;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+        }
+
+span.tooltip-bottom {
+    position: relative;
+    display: inline;
+}
+
+    span.tooltip-bottom span {
+        position: absolute;
+        width: 40px;
+        color: #FFFFFF;
+        background: #000000;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        visibility: visible;
+        opacity: 0.8;
+        top: 38px;
+        left: 50%;
+        margin-left: -20px;
+        z-index: 999;
+        border-radius: 6px;
+    }
+
+        span.tooltip-bottom span:after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -8px;
+            width: 0;
+            height: 0;
+            border-bottom: 8px solid #000000;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+        }

@@ -1,0 +1,97 @@
+﻿<div class="row">
+
+@{ 
+    foreach(var month in calendarData)
+    {
+    <div class="col calendar">
+        <div class="m-1 calendar-container">
+            <table>
+                <tr>
+                    <td colspan="8">
+                        <h5 class="text-center pt-3 mb-3">@currentCulture.DateTimeFormat.GetMonthName(month.Month) @month.Year</h5>
+                    </td>
+                </tr>
+                <tr class="calendar-header-cell">
+                    <td>&nbsp;</td>
+                    @foreach(var column in DayOfWeekColumns)
+                    {
+                    <td>@currentCulture.DateTimeFormat.GetAbbreviatedDayName(column)</td>
+                    }
+                </tr>
+                @foreach(var day in month.Weeks)
+                {            
+                <tr>
+                    <td class="calendar-cell calendar-week-cell">@day.Weeknumber</td>
+
+                    @foreach(var dayOfWeekColumn in DayOfWeekColumns)
+                    {
+                        var selectedDay = @day.Days.SingleOrDefault(d => d.DayOfWeek == dayOfWeekColumn);
+                        var minimumDaysToBook = MinimumDaysToSelect > 0 ? MinimumDaysToSelect - 1 : 0;
+                        var selectedDate = selectedDay?.Date;
+                        var decorationClass = GetCssDecorationClass(selectedDay);
+
+                        var firstOccupiedDate = GetFirstOccupiedDateAfterStartDate();
+
+                        <td class="calendar-cell @decorationClass">
+                            @if ((!startDate.HasValue && selectedDay?.Status == DayStatus.Free))
+                            {
+                                <span class="calendar-enabled-cell" @onclick="() => SelectStartDate(selectedDate)" @onclick:preventDefault>
+                                    @selectedDate?.Day
+                                </span>
+                            }
+                            else
+                            if (startDate.HasValue && !endDate.HasValue && startDate != selectedDate && selectedDay?.Status == DayStatus.Free)
+                            {
+                                if ((selectedDate < startDate.Value.AddDays(minimumDaysToBook)) || (firstOccupiedDate.HasValue && firstOccupiedDate.Value.Subtract(startDate.Value).TotalDays < minimumDaysToBook))
+                                {
+                                    <span class="calendar-disabled-cell">@selectedDate?.Day</span>
+                                }
+                                else
+                                {
+                                    if (selectedDate < firstOccupiedDate || firstOccupiedDate == null)
+                                    {
+                                    <span class="calendar-enabled-cell" @onclick="() => SelectEndDate(selectedDate)" @onclick:preventDefault>
+                                       @selectedDate?.Day
+                                    </span>
+                                    }
+                                    else
+                                    {
+                                    <span class="calendar-disabled-cell">@selectedDate?.Day</span>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrWhiteSpace(decorationClass))
+                                {
+                                    /* Bepaal of de start- of eind- tooltip moet laten zien */
+                                    var toolTipClass = (startDate == selectedDate && !endDate.HasValue) ? "tooltip-top" : (endDate == selectedDate) ? "tooltip-bottom" : "";
+
+                                    if (decorationClass.Contains("calendar-free-cell") && string.IsNullOrWhiteSpace(toolTipClass))
+                                    {
+                                        /* Disable alle cellen na selecteren van een periode */
+                                        <span class="calendar-disabled-cell">@selectedDate?.Day</span>
+                                    }
+                                    else
+                                    {
+                                        /* Als een begin of einddatum geselcteerd wordt laat dan de tooltip met dismiss zien */
+                                    <span class="@toolTipClass">
+                                        @selectedDate?.Day
+                                        @if (!string.IsNullOrWhiteSpace(toolTipClass))
+                                        {
+                                        <span class="dismiss btn" style="padding: 0px;" @onclick="ResetStartAndEndDate">🗙</span>
+                                        }
+                                    </span>
+                                    }
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+    }
+}
+</div>

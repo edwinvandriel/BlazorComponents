@@ -1,0 +1,27 @@
+﻿@page "/"
+
+@if (StartDate != DateTime.MinValue)
+{
+    <span>Start @StartDate.ToString("dd-MM-yyyy") until @EndDate.ToString("dd-MM-yyyy") @(EndDate.Subtract(StartDate).TotalDays + 1) days selected</span>
+}
+
+<EvdCalendar OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="6" OccupiedDateRanges="OccupiedList"></EvdCalendar>
+
+@code {
+    public DateTime StartDate { get; set; }
+    public DateTime EndDate { get; set; }
+
+    public List<DateRange> OccupiedList { get; set; } = new List<DateRange>();
+
+    private void DateSelected(DateRange dateRange)
+    {
+        StartDate = dateRange.Start;
+        EndDate = dateRange.End;
+    }
+
+    protected override void OnInitialized()
+    {
+        OccupiedList.Add(new DateRange(DateTime.Parse("5-6-2020"), DateTime.Parse("12-6-2020")));
+        OccupiedList.Add(new DateRange(DateTime.Parse("23-7-2020"), DateTime.Parse("1-8-2020")));
+    }
+}
