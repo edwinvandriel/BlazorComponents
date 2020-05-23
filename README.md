@@ -1,4 +1,4 @@
-# BlazorComponents library
+## BlazorComponents library
 This library includes several components to use with Blazor.
 
 Available components:
@@ -19,3 +19,12 @@ To install the library don't forget to do the following steps:
 ```
 
 After these settings you can use the calendar like in our sample 'CalendarSample'.
+
+Nothing selected
+![](images/EvdCalendar1.jpg)
+
+Start date selected
+![](images/EvdCalendar2.jpg)
+
+End date selected
+![](images/EvdCalendar3.jpg)

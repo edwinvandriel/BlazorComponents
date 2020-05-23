@@ -9,6 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarSample", "Samples\C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{0503E3D9-725D-4B2C-B225-F6F28BCCC302}"
 	ProjectSection(SolutionItems) = preProject
+		Images\EvdCalendar1.jpg = Images\EvdCalendar1.jpg
+		Images\EvdCalendar2.jpg = Images\EvdCalendar2.jpg
+		Images\EvdCalendar3.jpg = Images\EvdCalendar3.jpg
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
