@@ -1,0 +1,16 @@
+﻿<tr class="calendar-header-cell">
+    <td>&nbsp;</td>
+    @foreach(var column in DaysOfWeek)
+    {
+    <td>@CurrentCulture.DateTimeFormat.GetAbbreviatedDayName(column)</td>
+    }
+</tr>
+
+@code {
+
+    [Parameter]
+    public IEnumerable<DayOfWeek> DaysOfWeek { get; set; }
+
+    [Parameter]
+    public System.Globalization.CultureInfo CurrentCulture { get; set; }
+}

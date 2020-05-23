@@ -1,0 +1,51 @@
+﻿<td class="calendar-cell @GetCssDecorationClass()">
+    @ChildContent
+</td>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public DateTime? StartDate { get; set; }
+
+    [Parameter]
+    public DateTime? EndDate { get; set; }
+
+    [Parameter]
+    public CalendarDay CalendarDay { get; set; }
+
+    private string GetCssDecorationClass()
+    {
+        switch (CalendarDay)
+        {
+            case var d when StartDate.HasValue && d?.Date == StartDate:
+                {
+                    return "calendar-selected-cell calendar-selected-start-cell";
+                }
+
+            case var d when EndDate.HasValue && d?.Date == EndDate:
+                {
+                    return "calendar-selected-cell calendar-selected-end-cell";
+                }
+
+            case var d when d?.Date > StartDate && d?.Date < EndDate:
+                {
+                    return "calendar-selected-cell";
+                }
+
+            case var d when d?.Status == DayStatus.Free:
+                {
+                    return "calendar-free-cell";
+                }
+
+            case var d when d?.Status == DayStatus.Occupied:
+                {
+                    return "calendar-occupied-cell";
+                }
+        }
+
+
+        return string.Empty;
+    }
+}

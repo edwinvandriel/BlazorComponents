@@ -85,40 +85,6 @@ namespace Evd.Blazor.Components.Calendar
             return calendar;
         }
 
-        private string GetCssDecorationClass(CalendarDay dayModel)
-        {
-            switch (dayModel)
-            {
-                case var d when startDate.HasValue && d?.Date == startDate:
-                    {
-                        return "calendar-selected-cell calendar-selected-start-cell";
-                    }
-
-                case var d when endDate.HasValue && d?.Date == endDate:
-                    {
-                        return "calendar-selected-cell calendar-selected-end-cell";
-                    }
-
-                case var d when d?.Date > startDate && d?.Date < endDate:
-                    {
-                        return "calendar-selected-cell";
-                    }
-
-                case var d when d?.Status == DayStatus.Free:
-                    {
-                        return "calendar-free-cell";
-                    }
-
-                case var d when d?.Status == DayStatus.Occupied:
-                    {
-                        return "calendar-occupied-cell";
-                    }
-            }
-
-
-            return string.Empty;
-        }
-
         private DateTime? GetFirstOccupiedDateAfterStartDate()
         {
             if (OccupiedDateRanges == null || !startDate.HasValue)

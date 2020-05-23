@@ -51,6 +51,9 @@
         width: 100%;
         cursor: not-allowed;
     }
+    .calendar .calendar-disabled-white-cell {
+        color: white;
+    }
 
     .calendar .calendar-selected-start-cell {
         border-top-left-radius: 10px;

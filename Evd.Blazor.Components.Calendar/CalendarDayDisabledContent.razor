@@ -1,0 +1,6 @@
+﻿<span class="calendar-disabled-cell @(CalendarDay.Status == DayStatus.Occupied ? "calendar-disabled-white-cell" : "")">@CalendarDay?.Date.Day</span>
+
+@code {
+    [Parameter]
+    public CalendarDay CalendarDay { get; set; }
+}

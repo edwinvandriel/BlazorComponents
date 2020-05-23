@@ -1,0 +1,24 @@
+﻿<span class="@TooltipClass">
+    @CalendarDay.Date.Day
+    @if (!string.IsNullOrWhiteSpace(TooltipClass))
+    {
+    <span class="dismiss btn" style="padding: 0px;" @onclick="async() => await OnReset.InvokeAsync(this)">🗙</span>
+    }
+</span>
+
+@code {
+    [Parameter]
+    public DateTime? StartDate { get; set; }
+
+    [Parameter]
+    public DateTime? EndDate { get; set; }
+
+    [Parameter]
+    public CalendarDay CalendarDay { get; set; }
+
+    [Parameter]
+    public EventCallback OnReset { get; set; }
+
+    private string TooltipClass => (StartDate == CalendarDay.Date && !EndDate.HasValue) ? "tooltip-top" : (EndDate == CalendarDay.Date) ? "tooltip-bottom" : "";
+}
+

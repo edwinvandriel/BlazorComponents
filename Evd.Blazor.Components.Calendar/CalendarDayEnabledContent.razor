@@ -1,0 +1,11 @@
+﻿<span class="calendar-enabled-cell" @onclick="async () => await OnDateSelected.InvokeAsync(CalendarDay.Date)" @onclick:preventDefault>
+    @CalendarDay.Date.Day
+</span>
+                      
+@code {
+    [Parameter]
+    public CalendarDay CalendarDay { get; set; }
+
+    [Parameter]
+    public EventCallback<DateTime?> OnDateSelected { get; set; }
+}
