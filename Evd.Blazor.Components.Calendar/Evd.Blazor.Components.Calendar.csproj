@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Company>Edwin van Driel</Company>
     <Authors>Edwin van Driel</Authors>
     <Description>A Calendar component library for use with Microsoft Blazor. Ideal for booking applications.</Description>
