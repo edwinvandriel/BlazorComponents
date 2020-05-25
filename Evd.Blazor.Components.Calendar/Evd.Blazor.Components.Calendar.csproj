@@ -7,7 +7,7 @@
     <Version>0.0.1</Version>
     <Company>Edwin van Driel</Company>
     <Authors>Edwin van Driel</Authors>
-    <Description>A component library for use with Microsoft Blazor</Description>
+    <Description>A Calendar component library for use with Microsoft Blazor. Ideal for booking applications.</Description>
     <RepositoryUrl>https://github.com/edwinvandriel/BlazorComponents</RepositoryUrl>
     <PackageTags>blazor calendar</PackageTags>
     <PackageProjectUrl>https://github.com/edwinvandriel/BlazorComponents</PackageProjectUrl>

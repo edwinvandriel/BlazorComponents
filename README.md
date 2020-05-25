@@ -4,6 +4,10 @@ This library includes several components to use with Blazor.
 Available components:
 
 - EvdCalendar which is perfect for booking applications
+```csharp
+/// For nuget installation use
+Install-Package Evd.Blazor.Components.Calendar
+```
 
 
 To install the library don't forget to do the following steps:
