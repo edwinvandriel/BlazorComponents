@@ -1,17 +1,27 @@
 ﻿@page "/"
+@using System.Globalization
 
 @if (StartDate != DateTime.MinValue)
 {
-    <span>Start @StartDate.ToString("dd-MM-yyyy") until @EndDate.ToString("dd-MM-yyyy") @(EndDate.Subtract(StartDate).TotalDays + 1) days selected</span>
+    <span class="col-8">Start @StartDate.ToString("dd-MM-yyyy") until @EndDate.ToString("dd-MM-yyyy") @(EndDate.Subtract(StartDate).TotalDays + 1) days selected</span>
 }
 
-<EvdCalendar OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="6" OccupiedDateRanges="OccupiedList"></EvdCalendar>
+<select class="form-control col-3" @bind="Culture">
+    @foreach(var culture in CultureInfo.GetCultures(CultureTypes.InstalledWin32Cultures))
+    {
+        <option value="@culture.TwoLetterISOLanguageName">@culture.DisplayName</option>
+    }
+</select>
+
+<EvdCalendar Culture="@Culture" OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="6" OccupiedDateRanges="OccupiedList"></EvdCalendar>
 
 @code {
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
 
     public List<DateRange> OccupiedList { get; set; } = new List<DateRange>();
+
+    public string Culture { get; set; } = "nl";
 
     private void DateSelected(DateRange dateRange)
     {

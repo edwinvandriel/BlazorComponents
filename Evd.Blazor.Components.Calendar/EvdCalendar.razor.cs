@@ -76,11 +76,11 @@ namespace Evd.Blazor.Components.Calendar
                                                     );
 
         /// <summary>
-        /// Initialize the blazor application and set some things up.
+        /// When parameters change draw the calendar
         /// </summary>
-        protected override void OnInitialized()
+        protected override void OnParametersSet()
         {
-            if (currentCulture == null)
+            if (currentCulture == null || (currentCulture != null && currentCulture.TwoLetterISOLanguageName != Culture))
             {
                 currentCulture = new CultureInfo(Culture);
                 currentDate = new DateTime(StartYear, StartMonth, 1);
