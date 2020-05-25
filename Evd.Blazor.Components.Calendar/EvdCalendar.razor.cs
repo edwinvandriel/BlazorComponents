@@ -95,12 +95,11 @@ namespace Evd.Blazor.Components.Calendar
         private IEnumerable<CalendarYear> GetCalendarData()
         {
             var calendar = Enumerable
-                .Range(0, (int)currentDate.AddYears(1).Subtract(currentDate).TotalDays)
+                .Range(0, (int)currentDate.AddMonths(MaximumMonthsToDisplay).Subtract(currentDate).TotalDays)
                 .Select(d => currentDate.AddDays(d))
                 .Select(d => new { Date = d, Weekday = currentCulture.Calendar.GetDayOfWeek(d), WeekNr = currentCulture.Calendar.GetWeekOfYear(d, currentCulture.DateTimeFormat.CalendarWeekRule, currentCulture.DateTimeFormat.FirstDayOfWeek) })
                 .GroupBy(d => new { d.Date.Year, d.Date.Month, d.WeekNr })
                 .GroupBy(d => new { d.Key.Year, d.Key.Month })
-                .Take(MaximumMonthsToDisplay)
                 .Select(y => new CalendarYear
                 {
                     Month = y.Key.Month,
