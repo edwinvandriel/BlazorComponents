@@ -1,0 +1,12 @@
+﻿.calendar-disabled-cell {
+    color: silver;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: not-allowed;
+}
+
+.calendar-disabled-white-cell {
+    color: white;
+}

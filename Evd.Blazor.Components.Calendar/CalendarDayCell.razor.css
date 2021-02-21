@@ -1,0 +1,31 @@
+﻿.calendar-cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.calendar-selected-cell {
+    background-color: #225fa9;
+    color: white;
+}
+
+.calendar-selected-start-cell {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.calendar-selected-end-cell {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.calendar-free-cell {
+    background-color: #ccf1cc;
+}
+
+.calendar-occupied-cell {
+    background-color: red;
+    color: white;
+}

@@ -7,7 +7,7 @@
 }
 
 <select class="form-control col-3" @bind="Culture">
-    @foreach(var culture in CultureInfo.GetCultures(CultureTypes.InstalledWin32Cultures))
+    @foreach(var culture in CultureInfo.GetCultures(CultureTypes.NeutralCultures))
     {
         <option value="@culture.TwoLetterISOLanguageName">@culture.NativeName</option>
     }

@@ -1,0 +1,10 @@
+﻿.calendar {
+    max-width: 380px;
+}
+
+.calendar-container {
+    width: 340px;
+    height: 340px;
+    border: 1px solid silver;
+    border-radius: 4px;
+}
