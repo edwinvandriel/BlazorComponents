@@ -9,14 +9,6 @@ Available components:
 Install-Package Evd.Blazor.Components.Calendar
 ```
 
-
-To install the library don't forget to do the following steps:
-
-- Add to your _Host.html file.
-```html 
-<link rel="stylesheet" href="_content/Evd.Blazor.Components.Calendar/styles.css" />
-``` 
-
 - Add to your _Imports.razor file.
 ```csharp 
 @using Evd.Blazor.Components.Calendar

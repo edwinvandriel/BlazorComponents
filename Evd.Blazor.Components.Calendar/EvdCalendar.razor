@@ -17,7 +17,7 @@
                 @foreach(var day in month.Weeks)
                 {            
                 <tr>
-                    <td class="calendar-cell calendar-week-cell">@day.Weeknumber</td>
+                    <CalendarWeekNumberCell WeekNumber="@day.Weeknumber" />
 
                     @foreach(var dayOfWeekColumn in DayOfWeekColumns)
                     {
