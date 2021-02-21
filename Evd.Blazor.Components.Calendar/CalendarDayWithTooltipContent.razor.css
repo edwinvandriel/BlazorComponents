@@ -1,6 +1,7 @@
 ﻿span.tooltip-top {
     position: relative;
     display: inline;
+    cursor: pointer;
 }
 
     span.tooltip-top span {
@@ -36,6 +37,7 @@
 span.tooltip-bottom {
     position: relative;
     display: inline;
+    cursor: pointer;
 }
 
     span.tooltip-bottom span {

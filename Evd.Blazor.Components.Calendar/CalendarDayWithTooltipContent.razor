@@ -2,7 +2,7 @@
     @CalendarDay.Date.Day
     @if (!string.IsNullOrWhiteSpace(TooltipClass))
     {
-    <span class="dismiss btn" style="padding: 0px;" @onclick="async() => await OnReset.InvokeAsync(this)">🗙</span>
+    <span class="dismiss" style="padding: 0px;" @onclick="async() => await OnReset.InvokeAsync(this)">🗙</span>
     }
 </span>
 
