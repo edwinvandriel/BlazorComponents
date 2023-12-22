@@ -13,7 +13,7 @@
     }
 </select>
 
-<EvdCalendar Culture="@Culture" OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="6" OccupiedDateRanges="OccupiedList"></EvdCalendar>
+<EvdCalendar Culture="@Culture" OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="9" OccupiedDateRanges="OccupiedList"></EvdCalendar>
 
 @code {
     public DateTime StartDate { get; set; }
@@ -31,7 +31,7 @@
 
     protected override void OnInitialized()
     {
-        OccupiedList.Add(new DateRange(DateTime.Parse("5-6-2020"), DateTime.Parse("12-6-2020")));
-        OccupiedList.Add(new DateRange(DateTime.Parse("23-7-2020"), DateTime.Parse("1-8-2020")));
+        OccupiedList.Add(new DateRange(DateTime.Parse("5-6-2024"), DateTime.Parse("12-6-2024")));
+        OccupiedList.Add(new DateRange(DateTime.Parse("23-7-2024"), DateTime.Parse("1-8-2024")));
     }
 }
