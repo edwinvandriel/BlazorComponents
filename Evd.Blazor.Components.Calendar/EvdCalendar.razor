@@ -1,23 +1,25 @@
-﻿<div class="row">
-
+﻿<ul>
 @{ 
     foreach(var month in calendarData)
     {
-    <div class="col calendar">
-        <div class="m-1 calendar-container">
+    <li>
+        <div class="@GetCssDecorationClass()">
             <table>
                 <tr>
-                    <td colspan="8">
-                        <h5 class="text-center pt-3 mb-3">@currentCulture.DateTimeFormat.GetMonthName(month.Month) @month.Year</h5>
+                    <td colspan="@CalendarColumnCount">
+                        <h5 class="calendar-title">@currentCulture.DateTimeFormat.GetMonthName(month.Month) @month.Year</h5>
                     </td>
                 </tr>
 
-                <CalendarDayOfWeekRow CurrentCulture="currentCulture" DaysOfWeek="DayOfWeekColumns"></CalendarDayOfWeekRow>
+                <CalendarDayOfWeekRow CurrentCulture="currentCulture" DaysOfWeek="DayOfWeekColumns" ShowWeekNumbers="@ShowWeekNumbers"></CalendarDayOfWeekRow>
 
                 @foreach(var day in month.Weeks)
                 {            
                 <tr>
+                    @if (ShowWeekNumbers)
+                    {
                     <CalendarWeekNumberCell WeekNumber="@day.Weeknumber" />
+                    }
 
                     @foreach(var dayOfWeekColumn in DayOfWeekColumns)
                     {
@@ -64,7 +66,7 @@
                 }
             </table>
         </div>
-    </div>
+    </li>
     }
 }
-</div>
+</ul>

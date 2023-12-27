@@ -6,14 +6,14 @@
     <span class="col-8">Start @StartDate.ToString("dd-MM-yyyy") until @EndDate.ToString("dd-MM-yyyy") @(EndDate.Subtract(StartDate).TotalDays + 1) days selected</span>
 }
 
-<select class="form-control col-3" @bind="Culture">
+<select class="form-control col-md-3 mb-2" @bind="Culture">
     @foreach(var culture in CultureInfo.GetCultures(CultureTypes.NeutralCultures))
     {
         <option value="@culture.TwoLetterISOLanguageName">@culture.NativeName</option>
     }
 </select>
 
-<EvdCalendar Culture="@Culture" OnDateRangeSelected="DateSelected" MaximumMonthsToDisplay="6" OccupiedDateRanges="OccupiedList"></EvdCalendar>
+<EvdCalendar Culture="@Culture" OnDateRangeSelected="DateSelected" ShowWeekNumbers="true" MaximumMonthsToDisplay="9" OccupiedDateRanges="OccupiedList"></EvdCalendar>
 
 @code {
     public DateTime StartDate { get; set; }
@@ -31,7 +31,7 @@
 
     protected override void OnInitialized()
     {
-        OccupiedList.Add(new DateRange(DateTime.Parse("5-6-2020"), DateTime.Parse("12-6-2020")));
-        OccupiedList.Add(new DateRange(DateTime.Parse("23-7-2020"), DateTime.Parse("1-8-2020")));
+        OccupiedList.Add(new DateRange(DateTime.Parse("5-6-2024"), DateTime.Parse("12-6-2024")));
+        OccupiedList.Add(new DateRange(DateTime.Parse("23-7-2024"), DateTime.Parse("1-8-2024")));
     }
 }

@@ -1,6 +1,6 @@
-﻿<span class="@TooltipClass">
+﻿<span class="@GetCssDecorationClass()">
     @CalendarDay.Date.Day
-    @if (!string.IsNullOrWhiteSpace(TooltipClass))
+    @if (!string.IsNullOrWhiteSpace(GetCssDecorationClass()))
     {
     <span class="dismiss" style="padding: 0px;" @onclick="async() => await OnReset.InvokeAsync(this)">🗙</span>
     }
@@ -19,6 +19,19 @@
     [Parameter]
     public EventCallback OnReset { get; set; }
 
-    private string TooltipClass => (StartDate == CalendarDay.Date && !EndDate.HasValue) ? "tooltip-top" : (EndDate == CalendarDay.Date) ? "tooltip-bottom" : "";
+    private string GetCssDecorationClass()
+    {
+        if (StartDate == CalendarDay.Date && !EndDate.HasValue)
+        {
+            return "tooltip-top";
+        }
+
+        if (EndDate == CalendarDay.Date)
+        {
+            return "tooltip-bottom";
+        }
+
+        return string.Empty;
+    }
 }
 

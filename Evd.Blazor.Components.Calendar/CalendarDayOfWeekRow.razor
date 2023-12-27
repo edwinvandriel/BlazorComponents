@@ -1,5 +1,8 @@
 ﻿<tr class="calendar-header-cell">
+    @if (ShowWeekNumbers)
+    {
     <td>&nbsp;</td>
+    }
     @foreach(var column in DaysOfWeek)
     {
     <td>@CurrentCulture.DateTimeFormat.GetAbbreviatedDayName(column)</td>
@@ -13,4 +16,7 @@
 
     [Parameter]
     public System.Globalization.CultureInfo CurrentCulture { get; set; }
+
+    [Parameter]
+    public bool ShowWeekNumbers { get; set; } = true;
 }

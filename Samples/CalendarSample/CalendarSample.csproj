@@ -1,11 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Evd.Blazor.Components.Calendar\Evd.Blazor.Components.Calendar.csproj" />
   </ItemGroup>
-
 </Project>

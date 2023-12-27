@@ -1,4 +1,4 @@
-﻿<td class="calendar-cell @GetCssDecorationClass()">
+﻿<td class="@GetCssDecorationClass()">
     @ChildContent
 </td>
 
@@ -21,31 +21,30 @@
         {
             case var d when StartDate.HasValue && d?.Date == StartDate:
                 {
-                    return "calendar-selected-cell calendar-selected-start-cell";
+                    return "calendar-cell calendar-selected-cell calendar-selected-start-cell";
                 }
 
             case var d when EndDate.HasValue && d?.Date == EndDate:
                 {
-                    return "calendar-selected-cell calendar-selected-end-cell";
+                    return "calendar-cell calendar-selected-cell calendar-selected-end-cell";
                 }
 
             case var d when d?.Date > StartDate && d?.Date < EndDate:
                 {
-                    return "calendar-selected-cell";
+                    return "calendar-cell calendar-selected-cell";
                 }
 
             case var d when d?.Status == DayStatus.Free:
                 {
-                    return "calendar-free-cell";
+                    return "calendar-cell calendar-free-cell";
                 }
 
             case var d when d?.Status == DayStatus.Occupied:
                 {
-                    return "calendar-occupied-cell";
+                    return "calendar-cell calendar-occupied-cell";
                 }
+
+            default: return "calendar-cell";
         }
-
-
-        return string.Empty;
     }
 }
