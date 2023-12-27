@@ -25,7 +25,7 @@ namespace Evd.Blazor.Components.Calendar
         public int StartMonth { get; set; } = DateTime.Now.Month;
 
         /// <summary>
-        /// Minimum count of contiguous days to select. Default is 5 days.
+        /// Minimum number of consecutive days to select. Default is 5 days.
         /// </summary>
         [Parameter]
         public int MinimumDaysToSelect { get; set; } = 5;
