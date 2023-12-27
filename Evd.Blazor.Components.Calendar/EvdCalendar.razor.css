@@ -1,10 +1,28 @@
-﻿.calendar {
-    max-width: 380px;
+﻿ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    padding-right: 8px;
+}
+
+    li:last-child {
+        padding-right: 0;
+    }
+
+.calendar-title {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .calendar-container {
-    width: 340px;
-    height: 340px;
+    padding: 4px;
+}
+
+.calendar-container-border {
     border: 1px solid silver;
     border-radius: 4px;
 }

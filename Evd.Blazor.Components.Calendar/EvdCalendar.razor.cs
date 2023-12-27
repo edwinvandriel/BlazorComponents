@@ -37,6 +37,18 @@ namespace Evd.Blazor.Components.Calendar
         public int MaximumMonthsToDisplay { get; set; } = 12;
 
         /// <summary>
+        /// Display the week number column
+        /// </summary>
+        [Parameter]
+        public bool ShowWeekNumbers { get; set; } = true;
+
+        /// <summary>
+        /// Display border around calendar
+        /// </summary>
+        [Parameter]
+        public bool ShowBorder { get; set; } = true;
+
+        /// <summary>
         /// Input a collection of DateRange to display as occupied ranges.
         /// </summary>
         [Parameter]
@@ -60,6 +72,11 @@ namespace Evd.Blazor.Components.Calendar
         private IEnumerable<CalendarYear> calendarData;
         private CultureInfo currentCulture;
         private DateTime currentDate;
+
+        private const int DefaultColumnCount = 7;
+        private const int ColumnCountWithWeeknumber = DefaultColumnCount + 1;
+
+        private int CalendarColumnCount => ShowWeekNumbers ? ColumnCountWithWeeknumber : DefaultColumnCount;
 
         /// <summary>
         /// Get all the weekdays in the right order for the calendar.
@@ -168,6 +185,18 @@ namespace Evd.Blazor.Components.Calendar
             {
                 await OnDateRangeSelected.InvokeAsync(new DateRange(startDate.Value, endDate.Value));
             }
+        }
+
+        private string GetCssDecorationClass()
+        {
+            var defaultClass = "calendar-container";
+
+            if (ShowBorder)
+            {
+                defaultClass += " calendar-container-border";
+            }
+
+            return defaultClass;
         }
 
     }
