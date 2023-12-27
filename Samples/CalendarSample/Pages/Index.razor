@@ -6,7 +6,7 @@
     <span class="col-8">Start @StartDate.ToString("dd-MM-yyyy") until @EndDate.ToString("dd-MM-yyyy") @(EndDate.Subtract(StartDate).TotalDays + 1) days selected</span>
 }
 
-<select class="form-control col-3 mb-2" @bind="Culture">
+<select class="form-control col-md-3 mb-2" @bind="Culture">
     @foreach(var culture in CultureInfo.GetCultures(CultureTypes.NeutralCultures))
     {
         <option value="@culture.TwoLetterISOLanguageName">@culture.NativeName</option>
