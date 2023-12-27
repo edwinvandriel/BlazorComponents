@@ -2,15 +2,15 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <Company>Edwin van Driel</Company>
     <Authors>Edwin van Driel</Authors>
     <Description>A Calendar component library for use with Microsoft Blazor. Ideal for booking applications.</Description>
     <RepositoryUrl>https://github.com/edwinvandriel/BlazorComponents</RepositoryUrl>
     <PackageTags>blazor calendar</PackageTags>
     <PackageProjectUrl>https://github.com/edwinvandriel/BlazorComponents</PackageProjectUrl>
-    <AssemblyVersion>0.0.4.0</AssemblyVersion>
-    <FileVersion>0.0.4.0</FileVersion>
+    <AssemblyVersion>0.0.5.0</AssemblyVersion>
+    <FileVersion>0.0.5.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.0" />
