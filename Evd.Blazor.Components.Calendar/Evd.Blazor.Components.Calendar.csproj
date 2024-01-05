@@ -1,19 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.5</Version>
-    <Company>Edwin van Driel</Company>
-    <Authors>Edwin van Driel</Authors>
-    <Description>A Calendar component library for use with Microsoft Blazor. Ideal for booking applications.</Description>
-    <RepositoryUrl>https://github.com/edwinvandriel/BlazorComponents</RepositoryUrl>
-    <PackageTags>blazor calendar</PackageTags>
-    <PackageProjectUrl>https://github.com/edwinvandriel/BlazorComponents</PackageProjectUrl>
-    <AssemblyVersion>0.0.5.0</AssemblyVersion>
-    <FileVersion>0.0.5.0</FileVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>0.0.6</Version>
+		<Company>Edwin van Driel</Company>
+		<Authors>Edwin van Driel</Authors>
+		<Description>A Calendar component library for use with Microsoft Blazor. Ideal for booking applications.</Description>
+		<RepositoryUrl>https://github.com/edwinvandriel/BlazorComponents</RepositoryUrl>
+		<PackageTags>blazor calendar</PackageTags>
+		<PackageProjectUrl>https://github.com/edwinvandriel/BlazorComponents</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<AssemblyVersion>0.0.6.0</AssemblyVersion>
+		<FileVersion>0.0.6.0</FileVersion>
+		<IsPackable>true</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="Docs\README.md" Pack="true" PackagePath="\" />
+		<None Include="Docs\LICENSE.txt" Pack="true" PackagePath="\" />
+		<PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.14" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.14" />
+	</ItemGroup>
 </Project>
